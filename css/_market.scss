@@ -1,0 +1,48 @@
+
+.market{
+  @extend .container-fluid;
+  background: #3D3F48;
+}
+
+.marketContainer{
+  @extend .container;
+  padding:25px 0;
+}
+
+.marketLoader{
+  float:left;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.loaderNotification{
+  width: 100%;
+  text-align: center;
+  background: $colorPurple;
+  color:white;
+  padding: 15px;
+  margin-top:50px;
+  margin-bottom:50px;
+  p{
+    margin:0;
+  }
+}
+
+.market-list{
+  padding: 30px 15px;
+  overflow: hidden;
+
+  li{
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid $colorPurple;
+    padding:0 15px;
+
+    p{
+      float: left;
+      width: 25%;
+    }
+  }
+
+}

@@ -1,0 +1,401 @@
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes bounce {
+   0% { }
+   50% { transform: translateY(-2px);}
+}
+
+.garage{
+  @extend .container-fluid;
+  background: #3D3F48;
+  padding: 0;
+}
+
+.garageContainer{
+  @extend .container;
+  padding:25px 0;
+}
+
+.garageLoader{
+  float:left;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.loaderNotification{
+  width: 100%;
+  text-align: center;
+  background: $colorPurple;
+  color:white;
+  padding: 15px;
+  margin-top:50px;
+  margin-bottom:50px;
+  p{
+    margin:0;
+  }
+}
+
+.garageProfileHeader{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background:url('../assets/images/background_index_hero.jpg') 50% 50% no-repeat;
+  background-size: cover;
+  padding: 50px 15px;
+
+  .gradient{
+    position: absolute;
+    top:0;left:0;bottom:0;right:0;
+    z-index: 10;
+    background: -moz-linear-gradient(top, rgba(18,19,24,0) 0%, rgba(18,19,24,0) 1%, rgba(18,19,24,0.75) 100%);
+    background: -webkit-linear-gradient(top, rgba(18,19,24,0) 0%,rgba(18,19,24,0) 1%,rgba(18,19,24,0.75) 100%);
+    background: linear-gradient(to bottom, rgba(18,19,24,0) 0%,rgba(18,19,24,0) 1%,rgba(18,19,24,0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00121318', endColorstr='#bf121318',GradientType=0 );
+  }
+
+  .profile-title{
+    text-align: center;
+    position: relative;
+    z-index: 25;
+
+    h1{
+      font-weight: 400;
+    }
+
+    p{
+      color:$colorPurple;
+    }
+
+    .playerCredits{
+      color:white;
+      font-weight: 700;
+    }
+  }
+
+  .profile-header-list{
+    text-align: center;
+    position: relative;
+    z-index: 25;
+
+    li{
+      display: inline-block;
+
+      .avatar-container{
+        width: 125px;
+        height: 125px;
+        -webkit-border-radius: 125px;
+        -moz-border-radius: 125px;
+        border-radius: 125px;
+        box-shadow: 0 5px 5px rgba(black,.3);
+        transition: all ease-in-out .3s;
+
+        img{
+          -webkit-border-radius: 125px;
+          -moz-border-radius: 125px;
+          border-radius: 125px;
+          vertical-align: top;
+          width: 100%;
+          border: 8px solid rgba(white,.10);
+          transition: all ease-in-out .3s;
+        }
+
+        &:hover{
+          box-shadow: 0 5px 15px rgba(black,.5);
+
+          img{
+            border: 8px solid rgba($colorPurple,.17);
+          }
+        }
+
+      }
+    }
+
+  }
+
+    .profileContent{
+      @extend .col-lg-10, .col-md-10, .col-sm-6, .col-xs-12;
+    }
+
+    .profileImage{
+      @extend .col-lg-2, .col-md-2, .col-sm-6, .col-xs-12;
+
+      .imageContainer{
+        width: 100%;
+        padding-bottom: 100%;
+        position: relative;
+        border-radius: 3px;
+        background: #3D3F48;
+        overflow: hidden;
+      }
+
+      .imageContent{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        img{
+          vertical-align: middle;
+          width: 100%;
+          opacity: 0;
+        }
+
+      }
+    }
+}
+
+
+.inventoryList{
+  @extend .noPadding;
+  margin-top:10px;
+  width: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+
+  &>li{
+    @extend .col-lg-3, .col-md-3, .col-sm-4, .col-xs-12;
+    padding:15px 15px;
+    transition: all ease-in-out .3s;
+    position: relative;
+    overflow: hidden;
+
+    &:hover{
+      transform: scale(1.05);
+
+      .inventoryListItem{
+        box-shadow:0  0 15px rgba(black,0.5);
+        background:lighten($colorDarkness, 5%);
+      }
+
+    }
+
+  }
+
+  .inventoryListItem{
+    width: 100%;
+    padding-bottom: 100%;
+
+    border-radius: 50px;
+
+    float: left;
+    position: relative;
+    transition: all ease-in-out .3s;
+    background: $colorDarkness;
+  }
+
+  .inventoryListItemContainer{
+    position: absolute;
+    top:0;right:0;bottom:0;left:0;
+  }
+
+  .inventoryContent{
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    z-index: 35;
+
+    top:100%;
+    left: 0;
+    right:0;
+    transform: translateY(-100%);
+
+    h1{
+      font-size: 1em;
+      text-align: center;
+      width: 100%;
+      padding: 5px 15px;
+      margin: 0;
+      background: -moz-linear-gradient(top, rgba(18,19,24,0) 0%, rgba(18,19,24,0) 1%, rgba(18,19,24,0.75) 100%);
+      background: -webkit-linear-gradient(top, rgba(18,19,24,0) 0%,rgba(18,19,24,0) 1%,rgba(18,19,24,0.75) 100%);
+      background: linear-gradient(to bottom, rgba(18,19,24,0) 0%,rgba(18,19,24,0) 1%,rgba(18,19,24,0.75) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00121318', endColorstr='#bf121318',GradientType=0 );
+    }
+
+    button{
+      width: 100%;
+      color: white;
+      background: $colorPurple;
+      border: none;
+      border-radius: 3px;
+      padding: 15px;
+    }
+
+  }
+
+  .inventoryListItemImage{
+    width: 100%;
+    position: relative;
+    padding: 0;
+    z-index: 25;
+
+    .imageContainer{
+      width: 100%;
+      padding-bottom: 100%;
+      position: relative;
+      text-align: center;
+    }
+
+    .imageContent{
+      position: absolute;
+      top:-15px;
+      left:0;
+      right:0;
+      bottom:0;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+.garageList{
+  @extend .noPadding;
+  margin-top:10px;
+  width: 100%;
+  float: left;
+  position: relative;
+
+  &>li{
+    @extend .col-lg-4, .col-md-4, .col-sm-6, .col-xs-12;
+    padding:15px 15px;
+    transition: all ease-in-out .3s;
+
+    &:hover{
+      transform: scale(1.05);
+      .garageCarContainer{
+
+      }
+
+      .wheel{
+        animation:spin .5s linear infinite;
+      }
+
+      .garageListItem{
+        box-shadow:0  0 15px rgba(black,0.5);
+        background:lighten($colorDarkness, 5%);
+      }
+
+      .garageListItemImageHolder{
+        //animation: bounce .250s ease infinite;
+      }
+    }
+
+  }
+
+  .garageListItem{
+    width: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    transition: all ease-in-out .3s;
+    background: $colorDarkness;
+  }
+
+  .garageListItemImage{
+    width: 100%;
+    padding-bottom: 75%;
+    position: relative;
+    text-align: center;
+  }
+
+  .garageListItemActions{
+    width: 100%;
+    position: relative;
+  }
+
+  .garageCarContainer{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    transition: all ease-in-out .3s;
+  }
+
+  .wheel{
+    position: absolute;
+    width: 32px;
+    img{width: 100%;}
+    animation:spin 2s linear infinite;
+
+    &.front{
+      top: 58%;
+      right: 19%;
+    }
+
+    &.back{
+      top: 58%;
+      left: 19%;
+    }
+  }
+
+  .garageListItemImageHolder{
+    transition: all ease-in-out 0.3s;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    animation:none;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .garageListItemCarTitle{
+    position: absolute;
+    top:15%;
+    left:0;
+    right:0;
+    transform: translateY(-50%);
+
+    color:white;
+    font-size: 1.2em;
+    text-align: center;
+
+    p{
+      font-family: 'Orbitron', sans-serif;
+    }
+  }
+
+  .garageActions{
+    text-align: center;
+    padding:15px;
+
+    li{
+      width: 100%;
+      display: inline-block;
+      color: white;
+      margin-bottom: 5px;
+      border-radius: 3px;
+      overflow: hidden;
+
+      a, input[type="submit"]{
+        background: #3D3F48;
+        display: block;
+        padding:15px;
+
+        &:hover{
+          background: lighten(#3D3F48,5%);
+          text-decoration: none;
+          color:$colorPurple;
+        }
+      }
+    }
+  }
+}

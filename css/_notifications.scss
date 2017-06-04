@@ -1,0 +1,46 @@
+.notifications{
+  position: fixed;
+  right:0;
+  bottom:0;
+  overflow: hidden;
+  padding: 15px;
+  width: 325px;
+
+  ul{
+    padding: 0;
+    width: 100%;
+  }
+
+  li{
+    width: 100%;
+    display: inline-block;
+    margin:35px 0 0 0;
+  }
+
+  .notification{
+    width: 100%;
+    position: relative;
+    border-radius: 3px;
+    background:lighten($colorDarkness,8%);
+    border:2px solid $colorDarkness;
+    color:white;
+    text-align: center;
+    padding:7px 15px 7px 75px;
+
+    a{
+      font-size: 1em;
+      margin:0;
+      padding:0;
+      position: relative;
+      z-index: 251;
+    }
+
+    img{
+      width: 75px;
+      position: absolute;
+      bottom: 0;
+      left:0;
+      z-index: 250;
+    }
+  }
+}

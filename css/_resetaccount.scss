@@ -1,0 +1,19 @@
+.resetAccount{
+  position: relative;;
+  background: rgba($colorDarkness, 0.9);
+  z-index: 999;
+  height: 100vh;
+}
+
+.vertical-content{
+  position: absolute;
+  top:50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+
+  .content{
+
+  }
+
+}

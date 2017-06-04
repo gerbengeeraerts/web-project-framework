@@ -1,0 +1,93 @@
+.hero{
+  @extend .container-fluid;
+
+  background:url('../assets/images/background_index_hero.jpg') 50% 50% no-repeat;
+  background-size: cover;
+
+}
+
+.heroContainer{
+  @extend .container;
+  position: relative;
+  height: 100vh;
+}
+
+.heroHeader{
+  @extend .col-md-12;
+  padding:50px 0;
+  text-align: center;
+}
+
+.heroContent{
+  @extend .noPadding, .container;
+  position: absolute;
+
+  top:50%;
+  transform: translate(0,-50%);
+
+  text-shadow: 0 0 10px rgba(0,0,0,1);
+
+  h1{
+    color:white;
+    padding:7px 0;
+  }
+
+  h2{
+    color:$colorPurple;
+    padding:7px 0;
+  }
+
+  p{
+    color:white;
+    line-height: 2em;
+    padding:7px 0;
+    font-size: 1.2em;
+  }
+
+  .buttonList{
+    padding:7px 0;
+
+    li{
+      @extend .noPadding, .col-md-6;
+
+      &:first-child{
+        padding:0 15px 0 0;
+      }
+
+      &:last-child{
+        padding:0 0 0 15px;
+      }
+    }
+  }
+
+  .signUp, .garage{
+    background: $colorPurple;
+    color:white;
+    padding:17px 15px;
+
+    &:hover{
+      background-color: darken($colorPurple, 5%);
+    }
+  }
+
+  .logIn{
+    background: none;
+    border:solid 2px white;
+    color:white;
+    padding:15px;
+
+    &:hover{
+      background: rgba(white,0.1);
+    }
+  }
+}
+
+.heroFooter{
+  @extend .noPadding, .col-md-12;
+
+  text-align: center;
+  position: absolute;
+  bottom: 25px;
+  left:0;
+  right:0;
+}
