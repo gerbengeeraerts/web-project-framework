@@ -15,4 +15,5 @@ This is my start folder for a new basic web project, loaded with the following f
 
 * Implement extra Grunt tasks:
   * Grunt Imagemin - minify images
+  * Grunt Newer - Use this to only minify changed images with Imagemin
   * Grunt Autocomplete - Add browser prefixes
