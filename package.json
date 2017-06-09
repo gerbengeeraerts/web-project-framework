@@ -2,7 +2,7 @@
   "name": "web-project-framework",
   "version": "0.1.0",
   "author": "Gerben Geeraerts",
-  "description": "Full ready to go framework for a new web project",
+  "description": "Full frontend and backend framework.",
   "repository": "http://www.github.com/gerbengeeraerts/web-project-framework",
   "license": "MIT",
   "devDependencies": {
